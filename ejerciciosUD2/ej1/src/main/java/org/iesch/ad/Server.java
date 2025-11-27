@@ -22,7 +22,6 @@ public class Server {
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Server listening on port " + port + " (workDir=" + workDir.getAbsolutePath() + ")");
-// Sin executor: un hilo por cliente manualmente
             while (true) {
                 Socket client = serverSocket.accept();
                 Thread t = new Thread(new SrvThread(client, workDir));
