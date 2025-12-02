@@ -1,25 +1,29 @@
+import modelo.Contacto;
+
 import java.io.Serializable;
 import java.util.List;
 
 public class Response implements Serializable {
+    private static final long serialVersionUID = 1L;
+    public final boolean ok;
+    public final String message;
+    public final List<Contacto> data;
 
-    private final Request request;
-    private final boolean ok;
-    private final List<String> data;
-    private final String msg;
-
-    public Response(Request request, boolean ok, List<String> data, String msg) {
-        this.request = request;
+    public Response(boolean ok, String message, List<Contacto> data) {
         this.ok = ok;
+        this.message = message;
         this.data = data;
-        this.msg = msg;
     }
 
-    public Request getRequest() { return request; }
+    public static Response okWithData(List<Contacto> data) {
+        return new Response(true, null, data);
+    }
 
-    public boolean isOk() { return ok; }
+    public static Response okMessage(String msg) {
+        return new Response(true, msg, null);
+    }
 
-    public List<String> getResult() { return data; }
-
-    public String getMsg() { return msg; }
+    public static Response error(String msg) {
+        return new Response(false, msg, null);
+    }
 }

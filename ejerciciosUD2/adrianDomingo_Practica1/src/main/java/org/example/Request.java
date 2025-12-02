@@ -15,6 +15,7 @@ public class Request implements Serializable {
         this.argument = argument;
     }
 
+
     // helpers estáticos opcionales
     public static Request list() { return new Request(Type.LIST, null); }
     public static Request send(String name) { return new Request(Type.SEND, name); }
