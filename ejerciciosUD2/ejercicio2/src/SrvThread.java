@@ -10,7 +10,6 @@ public class SrvThread implements Runnable{
 
     private Socket socket;
     private File workDir;
-    private boolean stop = false;
 
     public SrvThread(Socket socket, File workDir) {
         this.socket = socket;

@@ -1,0 +1,7 @@
+Jose,Ramirez,18
+Jose,Ramirez,18
+Jose,Ramirez,18
+Jose,Ramirez,18
+Jose,Ramirez,18
+JOAN,AA,20
+JOSE,A,20
