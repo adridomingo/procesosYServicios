@@ -93,7 +93,7 @@ public class SvrThread implements Runnable {
         if (persona == null) return;
         File archivo = workdir;
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo, true))) {
-            
+            bw.newLine();
             bw.write(persona.getNombre()+","+persona.getApellido()+","+persona.getEdad());
 
             out.reset();
